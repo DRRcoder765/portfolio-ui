@@ -30,7 +30,7 @@
         <div class="hero-content">
             <h1>Attack on Titan</h1>
             <p>Watch the latest episodes of humanity's fight against Titans. Stream now!</p>
-            <button class="btn">Watch Free</button>
+            <button class="btn" onclick="openModal('https://www.youtube.com/embed/MGRm4IzK1SQ')">Watch Trailer</button>
         </div>
     </section>
 
@@ -38,28 +38,49 @@
     <section class="trending">
         <h2>Trending Now</h2>
         <div class="carousel" id="trending-carousel">
-            <div class="card">
-                <img src="https://via.placeholder.com/280x350?text=Anime1" alt="Anime 1">
+            <div class="card" onclick="openModal('https://www.youtube.com/embed/vHKJG8FZGqA')">
+                <img src="https://cdn.myanimelist.net/images/anime/1286/99889.jpg" alt="One Piece">
                 <div class="badge">Hot</div>
                 <div class="card-content">
-                    <h3>Anime Title 1</h3>
-                    <p>Episodes: 24 | Genre: Action</p>
+                    <h3>One Piece</h3>
+                    <p>Episodes: 1000+ | Genre: Adventure</p>
+                    <button class="ep-btn" onclick="toggleEpisodes('ep1')">View Episodes</button>
+                    <ul id="ep1" class="episodes" style="display: none;">
+                        <li>Episode 1: I'm Gonna Be King of the Pirates!</li>
+                        <li>Episode 2: The Great Swordsman Appears!</li>
+                        <li>Episode 3: Morgan vs. Luffy! Who's This Beautiful Young Girl?</li>
+                        <!-- Add more -->
+                    </ul>
                 </div>
             </div>
-            <div class="card">
-                <img src="https://via.placeholder.com/280x350?text=Anime2" alt="Anime 2">
+            <div class="card" onclick="openModal('https://www.youtube.com/embed/hxW9WnZ8GjQ')">
+                <img src="https://cdn.myanimelist.net/images/anime/1517/100633.jpg" alt="Demon Slayer">
                 <div class="badge">Hot</div>
                 <div class="card-content">
-                    <h3>Anime Title 2</h3>
-                    <p>Episodes: 12 | Genre: Romance</p>
+                    <h3>Demon Slayer</h3>
+                    <p>Episodes: 44 | Genre: Action</p>
+                    <button class="ep-btn" onclick="toggleEpisodes('ep2')">View Episodes</button>
+                    <ul id="ep2" class="episodes" style="display: none;">
+                        <li>Episode 1: Cruelty</li>
+                        <li>Episode 2: Trainer Sakonji Urokodaki</li>
+                        <li>Episode 3: Sabito and Makomo</li>
+                        <!-- Add more -->
+                    </ul>
                 </div>
             </div>
-            <div class="card">
-                <img src="https://via.placeholder.com/280x350?text=Anime3" alt="Anime 3">
+            <div class="card" onclick="openModal('https://www.youtube.com/embed/MGRm4IzK1SQ')">
+                <img src="https://cdn.myanimelist.net/images/anime/10/47347.jpg" alt="Attack on Titan">
                 <div class="badge">Hot</div>
                 <div class="card-content">
-                    <h3>Anime Title 3</h3>
-                    <p>Episodes: 26 | Genre: Fantasy</p>
+                    <h3>Attack on Titan</h3>
+                    <p>Episodes: 87 | Genre: Action</p>
+                    <button class="ep-btn" onclick="toggleEpisodes('ep3')">View Episodes</button>
+                    <ul id="ep3" class="episodes" style="display: none;">
+                        <li>Episode 1: To You, in 2000 Years</li>
+                        <li>Episode 2: That Day</li>
+                        <li>Episode 3: A Dim Light Amid Despair</li>
+                        <!-- Add more -->
+                    </ul>
                 </div>
             </div>
             <!-- Add more cards as needed -->
@@ -70,30 +91,56 @@
     <section class="recent">
         <h2>Recently Added</h2>
         <div class="grid">
-            <div class="card">
-                <img src="https://via.placeholder.com/280x350?text=Anime4" alt="Anime 4">
+            <div class="card" onclick="openModal('https://www.youtube.com/embed/5rN7FgX1lJQ')">
+                <img src="https://cdn.myanimelist.net/images/anime/1337/99013.jpg" alt="Jujutsu Kaisen">
                 <div class="card-content">
-                    <h3>Anime Title 4</h3>
-                    <p>Genre: Action | Rating: ★★★★☆</p>
+                    <h3>Jujutsu Kaisen</h3>
+                    <p>Genre: Supernatural | Rating: ★★★★☆</p>
+                    <button class="ep-btn" onclick="toggleEpisodes('ep4')">View Episodes</button>
+                    <ul id="ep4" class="episodes" style="display: none;">
+                        <li>Episode 1: Ryomen Sukuna</li>
+                        <li>Episode 2: For Myself</li>
+                        <!-- Add more -->
+                    </ul>
                 </div>
             </div>
-            <div class="card">
-                <img src="https://via.placeholder.com/280x350?text=Anime5" alt="Anime 5">
+            <div class="card" onclick="openModal('https://www.youtube.com/embed/8Qn_spdM5Zg')">
+                <img src="https://cdn.myanimelist.net/images/anime/1208/94745.jpg" alt="My Hero Academia">
                 <div class="card-content">
-                    <h3>Anime Title 5</h3>
-                    <p>Genre: Romance | Rating: ★★★★★</p>
+                    <h3>My Hero Academia</h3>
+                    <p>Genre: Superhero | Rating: ★★★★★</p>
+                    <button class="ep-btn" onclick="toggleEpisodes('ep5')">View Episodes</button>
+                    <ul id="ep5" class="episodes" style="display: none;">
+                        <li>Episode 1: Izuku Midoriya: Origin</li>
+                        <li>Episode 2: What It Takes to Be a Hero</li>
+                        <!-- Add more -->
+                    </ul>
                 </div>
             </div>
-            <div class="card">
-                <img src="https://via.placeholder.com/280x350?text=Anime6" alt="Anime 6">
+            <div class="card" onclick="openModal('https://www.youtube.com/embed/6vMuWuWlW4I')">
+                <img src="https://cdn.myanimelist.net/images/anime/6/73245.jpg" alt="Death Note">
                 <div class="card-content">
-                    <h3>Anime Title 6</h3>
-                    <p>Genre: Horror | Rating: ★★★☆☆</p>
+                    <h3>Death Note</h3>
+                    <p>Genre: Psychological | Rating: ★★★★☆</p>
+                    <button class="ep-btn" onclick="toggleEpisodes('ep6')">View Episodes</button>
+                    <ul id="ep6" class="episodes" style="display: none;">
+                        <li>Episode 1: Rebirth</li>
+                        <li>Episode 2: Confrontation</li>
+                        <!-- Add more -->
+                    </ul>
                 </div>
             </div>
             <!-- Add more cards -->
         </div>
     </section>
+
+    <!-- Video Modal -->
+    <div id="video-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <iframe id="video-frame" width="100%" height="400" src="" frameborder="0" allowfullscreen></iframe>
+        </div>
+    </div>
 
     <!-- Footer -->
     <footer>
