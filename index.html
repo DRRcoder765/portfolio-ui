@@ -3,123 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AnimeStream</title>
-    <style>
-        /* Global Styles */
-        body {
-            font-family: 'Roboto', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #0d0d0d;
-            color: #ffffff;
-        }
-        a { color: #00d4ff; text-decoration: none; }
-        a:hover { color: #39ff14; }
-
-        /* Header */
-        header {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: rgba(0, 0, 0, 0.8);
-            backdrop-filter: blur(10px);
-            padding: 10px 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            z-index: 1000;
-        }
-        .logo { font-size: 24px; font-weight: bold; }
-        nav { display: flex; gap: 20px; }
-        nav a { padding: 5px 10px; }
-        .search { flex: 1; max-width: 400px; margin: 0 20px; }
-        .search input { width: 100%; padding: 8px; background: #1a1a1a; border: 1px solid #00d4ff; color: white; }
-
-        /* Hero Section */
-        .hero {
-            height: 60vh;
-            background: url('https://via.placeholder.com/1920x1080?text=Featured+Anime') center/cover;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            margin-top: 60px; /* Account for fixed header */
-        }
-        .hero-content { background: rgba(0,0,0,0.5); padding: 20px; border-radius: 10px; }
-        .hero h1 { font-size: 48px; }
-        .hero p { font-size: 18px; margin: 20px 0; }
-        .btn { background: #00d4ff; color: black; padding: 10px 20px; border: none; cursor: pointer; }
-
-        /* Trending Section */
-        .trending {
-            padding: 40px 20px;
-            background: #1a1a1a;
-        }
-        .trending h2 { color: #39ff14; text-align: center; margin-bottom: 20px; }
-        .carousel {
-            display: flex;
-            overflow-x: auto;
-            gap: 20px;
-            scroll-behavior: smooth;
-        }
-        .carousel::-webkit-scrollbar { display: none; }
-
-        /* Anime Cards */
-        .card {
-            min-width: 250px;
-            background: #0d0d0d;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.5);
-            transition: transform 0.3s;
-        }
-        .card:hover { transform: translateY(-10px); }
-        .card img { width: 100%; height: 300px; object-fit: cover; }
-        .card-content { padding: 15px; }
-        .card h3 { margin: 0; font-size: 18px; }
-        .card p { margin: 5px 0; color: #ccc; }
-        .badge { background: #39ff14; color: black; padding: 2px 5px; font-size: 12px; }
-
-        /* Grid Section */
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 20px;
-            padding: 40px 20px;
-        }
-
-        /* Footer */
-        footer {
-            background: #1a1a1a;
-            padding: 20px;
-            text-align: center;
-        }
-        footer a { margin: 0 10px; }
-    </style>
+    <title>CrunchyAnime</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <!-- Header -->
     <header>
-        <div class="logo">AnimeStream</div>
+        <div class="logo">CrunchyAnime</div>
         <nav>
             <a href="#">Home</a>
             <a href="#">Browse</a>
-            <a href="#">Trending</a>
+            <a href="#">Simulcasts</a>
             <a href="#">Genres</a>
-            <a href="#">Watchlist</a>
+            <a href="#">My List</a>
         </nav>
         <div class="search">
             <input type="text" placeholder="Search anime...">
         </div>
-        <a href="#">Login</a>
+        <div class="user-actions">
+            <button class="btn">Login</button>
+        </div>
     </header>
 
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content">
             <h1>Attack on Titan</h1>
-            <p>Humanity fights for survival against giant Titans in a dystopian world.</p>
-            <button class="btn">Watch Now</button>
+            <p>Watch the latest episodes of humanity's fight against Titans. Stream now!</p>
+            <button class="btn">Watch Free</button>
         </div>
     </section>
 
@@ -128,59 +39,70 @@
         <h2>Trending Now</h2>
         <div class="carousel" id="trending-carousel">
             <div class="card">
-                <img src="https://via.placeholder.com/250x300?text=Anime1" alt="Anime 1">
+                <img src="https://via.placeholder.com/280x350?text=Anime1" alt="Anime 1">
+                <div class="badge">Hot</div>
                 <div class="card-content">
                     <h3>Anime Title 1</h3>
-                    <p>Episodes: 24</p>
-                    <span class="badge">Hot</span>
+                    <p>Episodes: 24 | Genre: Action</p>
                 </div>
             </div>
             <div class="card">
-                <img src="https://via.placeholder.com/250x300?text=Anime2" alt="Anime 2">
+                <img src="https://via.placeholder.com/280x350?text=Anime2" alt="Anime 2">
+                <div class="badge">Hot</div>
                 <div class="card-content">
                     <h3>Anime Title 2</h3>
-                    <p>Episodes: 12</p>
-                    <span class="badge">Hot</span>
+                    <p>Episodes: 12 | Genre: Romance</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://via.placeholder.com/280x350?text=Anime3" alt="Anime 3">
+                <div class="badge">Hot</div>
+                <div class="card-content">
+                    <h3>Anime Title 3</h3>
+                    <p>Episodes: 26 | Genre: Fantasy</p>
                 </div>
             </div>
             <!-- Add more cards as needed -->
         </div>
     </section>
 
-    <!-- Anime Grid -->
-    <section class="grid">
-        <div class="card">
-            <img src="https://via.placeholder.com/250x300?text=Anime3" alt="Anime 3">
-            <div class="card-content">
-                <h3>Anime Title 3</h3>
-                <p>Genre: Action | Rating: ★★★★☆</p>
+    <!-- Recently Added Section -->
+    <section class="recent">
+        <h2>Recently Added</h2>
+        <div class="grid">
+            <div class="card">
+                <img src="https://via.placeholder.com/280x350?text=Anime4" alt="Anime 4">
+                <div class="card-content">
+                    <h3>Anime Title 4</h3>
+                    <p>Genre: Action | Rating: ★★★★☆</p>
+                </div>
             </div>
-        </div>
-        <div class="card">
-            <img src="https://via.placeholder.com/250x300?text=Anime4" alt="Anime 4">
-            <div class="card-content">
-                <h3>Anime Title 4</h3>
-                <p>Genre: Romance | Rating: ★★★★★</p>
+            <div class="card">
+                <img src="https://via.placeholder.com/280x350?text=Anime5" alt="Anime 5">
+                <div class="card-content">
+                    <h3>Anime Title 5</h3>
+                    <p>Genre: Romance | Rating: ★★★★★</p>
+                </div>
             </div>
+            <div class="card">
+                <img src="https://via.placeholder.com/280x350?text=Anime6" alt="Anime 6">
+                <div class="card-content">
+                    <h3>Anime Title 6</h3>
+                    <p>Genre: Horror | Rating: ★★★☆☆</p>
+                </div>
+            </div>
+            <!-- Add more cards -->
         </div>
-        <!-- Add more cards -->
     </section>
 
     <!-- Footer -->
     <footer>
-        <a href="#">About</a> | <a href="#">Contact</a> | <a href="#">Privacy</a>
-        <p>&copy; 2023 AnimeStream</p>
+        <div class="footer-links">
+            <a href="#">About</a> | <a href="#">Help</a> | <a href="#">Community</a> | <a href="#">News</a>
+        </div>
+        <p>&copy; 2023 CrunchyAnime. All rights reserved.</p>
     </footer>
 
-    <script>
-        // Simple carousel auto-scroll (optional)
-        const carousel = document.getElementById('trending-carousel');
-        let scrollAmount = 0;
-        setInterval(() => {
-            scrollAmount += 270; // Card width + gap
-            if (scrollAmount >= carousel.scrollWidth) scrollAmount = 0;
-            carousel.scrollTo({ left: scrollAmount, behavior: 'smooth' });
-        }, 5000);
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
